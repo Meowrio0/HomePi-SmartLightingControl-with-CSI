@@ -97,6 +97,7 @@ flowchart TD
   - ESP：C / ESP-IDF
   - Raspberry Pi：Python 3、MQTT、pigpio、joblib
   - HomeBridge Plugin：Node.js / JavaScript
+- **使用模型**:LSTM Autoencoder(異常檢測方法）
 - **模型格式**：`.pkl、.tflite`
 
 ---
