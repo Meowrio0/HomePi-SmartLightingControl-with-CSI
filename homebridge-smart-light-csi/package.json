@@ -1,0 +1,30 @@
+{
+  "name": "homebridge-smart-light-csi",
+  "version": "1.0.0",
+  "description": "智慧燈泡（CSI + LDR + PIR + GPIO）",
+  "main": "index.js",
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "smart-light",
+    "csi",
+    "gpio",
+    "mqtt"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "homebridge": ">=1.6.0"
+  },
+  "author": "linjianxun",
+  "license": "MIT",
+  "homebridge": {
+    "pluginType": "accessory",
+    "accessories": [
+      "SmartLightCSI"
+    ]
+  },
+  "dependencies": {
+    "mqtt": "^5.13.0",
+    "pigpio": "^3.3.1"
+  }
+}

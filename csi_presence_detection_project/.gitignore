@@ -1,0 +1,26 @@
+# ESP-IDF build files
+esp32_firmware/csi_recv_router/build/
+esp32_firmware/csi_recv_router/sdkconfig
+
+# Python cache and environment files
+raspberry_pi_scripts/__pycache__/
+*.pyc
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# macOS specific files
+.DS_Store
+
+# Large dataset files (if you decide to store them elsewhere)
+# datasets/raw_csi_data/*.csv 
+# datasets/processed_data/*.csv
+
+# Jupyter Notebook checkpoints
+notebooks/.ipynb_checkpoints/
+
+# Compiled model files (if they are very large)
+# models/*.pkl

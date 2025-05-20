@@ -1,0 +1,86 @@
+{
+  "pluginAlias": "SmartLightRSSI",
+  "pluginName": "homebridge-smart-light-rssi",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "The name of the device"
+      },
+      "gpioPin": {
+        "type": "number",
+        "title": "GPIO Pin",
+        "description": "The GPIO pin connected to the light"
+      },
+      "invert": {
+        "type": "boolean",
+        "title": "Invert",
+        "description": "Whether to invert the light control"
+      },
+      "initState": {
+        "type": "number",
+        "title": "Initial State",
+        "description": "Initial state of the light (0 or 1)",
+        "enum": [0, 1]
+      },
+      "ldrPin": {
+        "type": "number",
+        "title": "LDR Pin",
+        "description": "The GPIO pin connected to the LDR sensor"
+      },
+      "macAddress": {
+        "type": "string",
+        "title": "MAC Address",
+        "description": "The MAC address of the device to monitor RSSI"
+      },
+      "scanInterval": {
+        "type": "number",
+        "title": "Scan Interval",
+        "description": "The interval in seconds for scanning RSSI"
+      },
+      "autoControl": {
+        "type": "boolean",
+        "title": "Auto Control",
+        "description": "Whether to enable automatic control"
+      },
+      "forceOn": {
+        "type": "boolean",
+        "title": "Force On",
+        "description": "Whether to force the light on"
+      },
+      "sleepMode": {
+        "type": "boolean",
+        "title": "Sleep Mode",
+        "description": "Whether to force the light off"
+      },
+      "pirPin": {
+      "type": "number",
+      "title": "PIR GPIO Pin",
+      "description": "GPIO pin connected to the PIR motion sensor"
+      },
+      "usePIR": {
+      "type": "boolean",
+      "title": "Use PIR Sensor",
+      "description": "Enable PIR sensor for motion detection"
+      }
+    },
+    "required": ["name", "gpioPin", "ldrPin", "macAddress", "scanInterval"]
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
