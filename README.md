@@ -66,11 +66,30 @@ flowchart TD
 
 - 使用 **ESP32** 收集 CSI 資料
 - 特徵選擇：以 amplitude 的標準差 (STD) 為主特徵
-- 模型結構：**Bi-LSTM AutoEncoder**
+- 模型結構：**LSTM AutoEncoder**
 - 訓練策略：以「沒有人」狀態為正常樣本進行異常學習
 - 推論邏輯：輸出 reconstruction error，若超過閾值 → 判定為「有人」
 - 成功案例：最終測試環境下可穩定判斷靜止人物存在，並控制燈光
 
+### 模型架構設計：
+
+- 使用單一特徵：`csi_amp_std`
+- 時序長度：1.5 秒（以 16Hz 採樣，共 24 筆資料）
+- 編碼器層：2 層 LSTM（64 → 32 units）
+- 解碼器層：對稱的 2 層 LSTM
+- 正則化：Dropout、BatchNormalization、L2 Regularization
+- 損失函數：MSE（重建誤差）
+
+### 訓練方式：
+
+- **僅使用「無人」資料進行訓練**
+- 訓練完成後，以重建誤差作為判斷標準
+- 根據驗證集自動找出最佳閾值（Youden’s J index）
+
+### 預測邏輯：
+
+- 若一段 CSI 序列的重建誤差高於閾值，即判斷為「有人」出現
+- 
 ### HomeBridge Plugin 開發
 
 - 自行撰寫 `index.js` 實現 HomeKit 整合
@@ -99,6 +118,7 @@ flowchart TD
   - HomeBridge Plugin：Node.js / JavaScript
 - **使用模型**:LSTM Autoencoder(異常檢測方法）
 - **模型格式**：`.pkl、.tflite`
+
 
 ---
 
