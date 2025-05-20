@@ -97,7 +97,7 @@ flowchart TD
   - ESP：C / ESP-IDF
   - Raspberry Pi：Python 3、MQTT、pigpio、joblib
   - HomeBridge Plugin：Node.js / JavaScript
-- **模型格式**：`.pkl`（包含訓練好的 SVM、AutoEncoder 等模型與標準化器）
+- **模型格式**：`.pkl、.tflite`
 
 ---
 
